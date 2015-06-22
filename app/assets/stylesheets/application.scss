@@ -216,22 +216,31 @@ footer {
 	.submit-btn{margin-top: 10px;}
 
 	.results-box{
+		font-family: $source, helvetica, arial, sans-serif;
+		font-weight: 300;
+		font-size: 1.2em;
+		line-height: 1.6;
+		color: $dkgrey;
 
 	}
 
 }
+.dashboard-btn{
+	float: right;
+	margin-left:10px;}
 .logout-btn {
 		background-color: $blue;
 		float: right;
 		margin-bottom: 40px;
 }	
 
+
 /* DASHBOARD */
 .dashboard-page{
-	.dashboard-form{
+
+	.post-box{
 		width: 340px;
 		margin: 0 auto;
-
 
 		.type-post{
 			.input-box{width: 200px;}
@@ -248,6 +257,8 @@ footer {
 			.input-box{width: 290px;}
 		}
 	}
+
+
 }
 	
 
@@ -279,7 +290,6 @@ footer {
 		.join-btn{margin-right:10px;}
 	}
 
-
 	form,
 	.search-form,
 	.results-box{width: 500px;}
@@ -296,7 +306,6 @@ footer {
 			}
 			}
 	}	
-
 }
 
 /* LARGE MEDIA QUERY */
@@ -309,12 +318,9 @@ footer {
 	 .dashboard-page{
 		padding: 100px;}
 
-
 		.type-post{
 			.input-box{width: 200px;}
 		}
 
-
 	}
-
 

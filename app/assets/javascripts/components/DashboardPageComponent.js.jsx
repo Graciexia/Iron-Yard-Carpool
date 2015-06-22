@@ -40,7 +40,7 @@ var Dashboard = React.createClass({
 						<input type='text' ref='comment-text' className='input-box' placeholder='See comments from classmates' />
 					</div>
 				</div>
-				
+
 				<footer>
 					Created by Gracie, Maryna and Carissa
 				</footer>

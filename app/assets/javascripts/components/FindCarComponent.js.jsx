@@ -6,6 +6,10 @@ var FindCar = React.createClass({
 		return (
 			<div className="ride-results-page">
 				<div className='header-btn'>
+					<button className="dashboard-btn" onClick={this.dashboard}>
+  						<strong>Dashboard</strong>
+  					</button>
+
 					<button className="logout-btn" onClick={this.logOut}>
   						<strong>Log Out</strong>
   					</button>
