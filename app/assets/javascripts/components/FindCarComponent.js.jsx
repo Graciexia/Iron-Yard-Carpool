@@ -57,7 +57,7 @@ var FindCar = React.createClass({
 						neighbors.push({
 							user: data[i].username,
 							address: data[i].address,
-							phone_number: data[i].phone,
+							phone_number: data[i].phone_number,
 							email: data[i].email,
 						})	
 					}
