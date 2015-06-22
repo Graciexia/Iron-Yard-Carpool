@@ -68,5 +68,8 @@ var FindCar = React.createClass({
 	},
 	logOut: function() {
 		app.navigate('', {trigger: true});
+	},
+	dashboard: function() {
+		app.navigate('posts', {trigger: true});
 	}
 });

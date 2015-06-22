@@ -25,19 +25,15 @@ var Dashboard = React.createClass({
 				<h2>Start a conversation with your classmates!</h2>
 
 				<div className='post-box'>
-					<div className="type-post">
+					<form className="type-post" onSubmit={this.makePost}>
 						<input type='text' ref='writePost' className='input-box' placeholder='Type your post here' />
-						<button className="submit-btn" onClick={this.makePost}>
+						<button className="submit-btn">
 							<strong>Submit</strong>
 						</button>
-					</div>
+					</form>
 
 					<div className="posted-post">
 						<Posts allPosts={this.state.data} />
-					</div>
-
-					<div className="post-comments">
-						<input type='text' ref='comment-text' className='input-box' placeholder='See comments from classmates' />
 					</div>
 				</div>
 
@@ -60,6 +56,9 @@ var Dashboard = React.createClass({
 			type: 'POST',
 			data: newPost
 		});
+	},
+	logOut: function() {
+		app.navigate('', {trigger: true});
 	}
 });
 
