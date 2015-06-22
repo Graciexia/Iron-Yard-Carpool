@@ -55,8 +55,8 @@ var Signup = React.createClass({
 		var password_confirmation = this.refs.signupPasswordConfirm.getDOMNode().value;
 		var email = this.refs.signupEmail.getDOMNode().value;
 		var phone = this.refs.signupPhone.getDOMNode().value;
-		var zip = this.refs.signupAddress.getDOMNode().value;
-		var address = this.refs.signupZip.getDOMNode().value;
+		var address = this.refs.signupAddress.getDOMNode().value;
+		var zip = this.refs.signupZip.getDOMNode().value;
 		var error = this.refs.error.getDOMNode();
 
 		var user = new UserModel({
