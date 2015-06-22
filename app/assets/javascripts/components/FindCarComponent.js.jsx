@@ -34,9 +34,7 @@ var FindCar = React.createClass({
 					</h2>
 				</div>
 				<div className="results-box">
-
 					<SearchResults results={this.state.data} />
-
 				</div>
 				<footer>
 					Created by Gracie, Maryna and Carissa
@@ -59,7 +57,7 @@ var FindCar = React.createClass({
 						neighbors.push({
 							user: data[i].username,
 							address: data[i].address,
-							phone: data[i].phone,
+							phone_number: data[i].phone,
 							email: data[i].email,
 						})	
 					}

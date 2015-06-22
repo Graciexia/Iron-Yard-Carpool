@@ -2,16 +2,16 @@ var Dashboard = React.createClass({
 	getInitialState: function() {
 		return {data: []};
 	},
-	// loadCommentsFromServer: function() {
-	// 	$.ajax({
-	// 		url: 'https://calm-thicket-5529.herokuapp.com/posts',
-	// 		dataType: 'json',
-	// 		type: 'GET',
-	// 		success: function(data) {
-	// 			this.setState({data: data});
-	// 	  	}.bind(this)
-	// 	});
-	// },
+	componentDidMount: function() {
+		$.ajax({
+			url: 'https://calm-thicket-5529.herokuapp.com/posts',
+			dataType: 'json',
+			type: 'GET',
+			success: function(data) {
+				this.setState({data: data});
+			}.bind(this)
+		})	
+	},
 	render: function() {
 		return (
 			<div className="dashboard-page">

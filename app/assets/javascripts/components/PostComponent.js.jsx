@@ -1,8 +1,13 @@
 var Posts = React.createClass({
-	getInitialState: function() {
-    	return {data: []};
-  	},
   	render: function() {
-  		return(<div></div>)
+  		var usersPosts = this.props.allPosts;
+  		var postsToDisplay = usersPosts.map(function(post){
+	  		return(
+	  			<div key={post.cid} className="results-box">
+					{post.body}
+				</div>
+			);
+		});
+		return (<div>{postsToDisplay}</div>)
   	}
 });

@@ -92,7 +92,7 @@ var Signup = React.createClass({
 						type: 'POST',
 						data: newUser
 					});
-					app.navigate('/search/zip_code/', {trigger: true});
+					app.navigate('/search/zipcode/', {trigger: true});
 				}
 			}
 		});
