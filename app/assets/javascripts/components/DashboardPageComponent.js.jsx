@@ -14,7 +14,6 @@ var Dashboard = React.createClass({
 
 	  			<img className='welcome-image' src="assets/home-page-visual.png" alt="Iron Rides Carpool"/>
 
-<<<<<<< HEAD
 	  			<h2>Post Stuff!</h2>
 	  			
 				<div className="post-box">
@@ -22,8 +21,6 @@ var Dashboard = React.createClass({
 					// posts go here........
 
 				</div>
-=======
->>>>>>> fc811e67e2b0edbe7905a63fadb4eed7a7501365
 
 	  			<h2>Start a conversation with your classmates!</h2>
 
