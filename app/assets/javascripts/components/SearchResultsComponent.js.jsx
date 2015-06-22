@@ -1,8 +1,6 @@
 var SearchResults = React.createClass({
-
 	render: function () {
 		var searchResults = this.props.results;
-		console.log(searchResults);
 		if(searchResults.length === 0) {
 			return (<div></div>);
 		} else {

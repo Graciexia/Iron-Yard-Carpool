@@ -13,9 +13,7 @@ var FindCar = React.createClass({
 
 				<img className='welcome-image' src="assets/home-page-visual.png" alt="Iron Rides Carpool"/>
 
-
 				<h2>Find classmates living in your zipcode!</h2>
-
 
 				<form className='search-form'>
 
