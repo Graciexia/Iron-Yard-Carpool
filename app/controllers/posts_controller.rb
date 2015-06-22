@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def create
     begin
-      post = Post.create(body: params[:body], user_id: params[:user_id])
+      post = Post.create(body: params[:body], user_id: @current_user.id)
       render json: post, status: 200
     rescue ActionController::ParameterMissing => error
       render json: { error: error.message }, status: 422
@@ -56,11 +56,11 @@ class PostsController < ApplicationController
   def allowed_to_modify!
     if Post.exists? (params[:id])
       post = Post.find(params[:id])
-      if post.user_id != @current_user.id
-        redirect_to :back, alert: "Users can only modify their own data."
+      if params[:id].to_s != @current_user.id.to_s
+        render json: { error: "User's can only update their own data." }, status: 403
       end
     else
-      redirect_to :back, alert: "Could not find the selected post in the DB."
+      render json: { error: "Could not find the selected post in the DB." }, status: 404
     end
   end
 

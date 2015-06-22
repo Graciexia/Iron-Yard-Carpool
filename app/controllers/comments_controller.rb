@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
 
   def create
-    comment = Comment.create(words: params[:words], user_id: params[:id], post_id: params[:post_id])
+    comment = Comment.create(words: params[:words], user_id: @current_user.id, post_id: params[:post_id])
     render json: comment
   end
 
@@ -30,11 +30,11 @@ class CommentsController < ApplicationController
   def allowed_to_modify!
     if Comment.exists? (params[:id])
       comment = Comment.find(params[:id])
-      if comment.user_id != @current_user.id
-        redirect_to :back, status: 301 # alert: "Users can only modify their own data."
+      if params[:id].to_s != @current_user.id.to_s
+        render json: { error: "User's can only update their own data." }, status: 403
       end
     else
-      redirect_to :back, status: 302 # alert: "Could not find the selected comment in the DB."
+      render json: { error: "Could not find the selected comment in the DB." }, status: 404
     end
   end
 end

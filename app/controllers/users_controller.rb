@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     render json: User.find(params[:id])
   end
 
-
   def create
    begin
      user = User.new(username: params[:username], email:params[:email], password: params[:password], password_confirmation: params[:password_confirmation], phone_number: params[:phone_number], address: params[:address], zip_code: params[:zip_code])
@@ -57,10 +56,8 @@ class UsersController < ApplicationController
 
 private
   def allowed_to_modify!
-      if params[:id] != @current_user.id
-        redirect_to :back, status: 301 # alert: "Users can only modify their own data."
-    else
-      redirect_to :back, status: 302 # alert: "Could not find the selected User in the DB."
+    if params[:id].to_s != @current_user.id.to_s
+      render json: { error: "User's can only update their own data." }, status: 403
     end
   end
 end
